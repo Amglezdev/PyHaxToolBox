@@ -22,8 +22,7 @@ def sshAttack(host, username, password):
     except socket.timeout(): #In case we cannot connect to the desired server
         return False
 
-    except paramiko.AuthenticationException: #If we cannot connect to the server
-        attemps+=1
+    except paramiko.AuthenticationException: #If we cannot connect to the server        
         print("Credentials are invalid")
         return False
 
