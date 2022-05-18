@@ -24,15 +24,12 @@ def isOpenOrNot(host, port):
         sock.connect((host, port))
         if(timeout > 1):
             sock.close()
-
-
-
     except:
         print("Port " + str(port) + " is not open on host " + str(host))
         return False  # If we cannot connect, it returns false so we know it isnt open
     else:  # In case we were able to connect, it returns true and it will let us know it is open
         print("Port " + str(port) + " is open on host " + str(host))
-        txt = open("vulnerable.txt", "a")
+        txt = open("Vulnerable.txt", "a")
         txt.write("Port " + str(port) + " is open on host " + str(host))
         return True
 
