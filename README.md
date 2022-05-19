@@ -1,7 +1,7 @@
 # PyHaxToolBox
 
 
-[PyHaxToolBox](https://github.com/Amglezdev/PyHaxToolBox) de Python orientado a ciberseguridad consiste en una pequeña colección de programas que cumplen distintas funciones, podríamos verlo como una cajita de herramientas.
+[PyHaxToolBox](https://github.com/Amglezdev/PyHaxToolBox) es un proyecto escrito en Python orientado a ciberseguridad consiste en una pequeña colección de programas que cumplen distintas funciones, podríamos verlo como una cajita de herramientas.
 
 Pequeño disclaimer, estas herramientas están pensadas para ser usadas en “ethical hacking”, no nos responsabilizamos de cualquier mal uso de estas.
 
