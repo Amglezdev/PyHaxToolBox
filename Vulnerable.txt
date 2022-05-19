@@ -1,4 +1,4 @@
 Port 22 is open on host 192.168.20.15
 Port 3306 is open on host 192.168.20.15
 Port 8080 is open on host 192.168.20.15
-Port 22 is open on host 192.168.0.54
+Port 22 is open on host 192.168.0.54Port 22 is open on host 192.168.20.15Port 80 is open on host 192.168.20.15
