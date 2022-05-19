@@ -30,7 +30,7 @@ def isOpenOrNot(host, port):
     else:  # In case we were able to connect, it returns true and it will let us know it is open
         print("Port " + str(port) + " is open on host " + str(host))
         txt = open("Vulnerable.txt", "a")
-        txt.write("Port " + str(port) + " is open on host " + str(host))
+        txt.write("Port " + str(port) + " is open on host " + str(host) + "\n")
         return True
 
 
