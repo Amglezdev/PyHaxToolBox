@@ -2,7 +2,7 @@
 #it uses os library to execute the proper commands
 
 
-# @author amglezdev a.k.a csi21amorlez
+#@Author amglezdev
 
 import os
 

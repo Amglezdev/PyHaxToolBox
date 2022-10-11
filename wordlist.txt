@@ -1,5 +1,1 @@
-12345	
-randompassword
-nomeinteresa
-aversihaysuerte
-Palitosdepescado
+[BORRAR] Aqui es donde van las contraseñas para atacar usando el phBruteForce.py [BORRAR]
